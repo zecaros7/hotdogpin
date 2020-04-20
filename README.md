@@ -57,8 +57,8 @@ app.post('/create-checkout-session', async (req, res) => {
     locale: locale,
     line_items: [
       {
-        name: 'Pasha photo',
-        images: ['https://picsum.photos/300/300?random=4'],
+        name: 'Hotdog pin photo',
+        images: ['https://www.hotdogpins.com/imgs/previews/thinking_hotdog.png'],
         quantity: quantity,
         currency: process.env.CURRENCY,
         amount: process.env.BASE_PRICE, // Keep the amount on the server to prevent customers from manipulating on client
