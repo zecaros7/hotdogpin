@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="http://localhost:4242" type="text/css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="checkout">
+        <div id="payment-form">
+          <h1>Hotdog Pins</h1>
+          <img src="https://www.hotdogpins.com/imgs/previews/thinking_hotdog.png" width="140" height="160" />
+          <button id="buy-button">Buy</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      var stripe = Stripe('pk_test_Hei6U9Oumo5FLSzgxqxLclgR00OCdMK8Aw');
+      var buyButton = document.getElementById('buy-button');
+      buyButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        stripe.redirectToCheckout({
+          sessionId: sessionId
+        });
+      });
+
+      var sessionId;
+      fetch('/create-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({})
+      }).then(function(r) {
+        return r.json();
+      }).then(function(response) {
+        sessionId = response.id;
+      });
+    </script>
+  </body>
+</html>
