@@ -8,15 +8,15 @@
       <div id="checkout">
         <div id="payment-form">
           <h1>Hotdog Pins</h1>
-          <img src="https://www.hotdogpins.com/imgs/previews/thinking_hotdog.png" width="140" height="160" />
-          <button id="buy-button">Buy</button>
+          <img src="https://www.hotdogpins.com/imgs/previews/thinking_hotdog.png" />
+          <button id="purchase-button">Purchase</button>
         </div>
       </div>
     </div>
     <script src="https://js.stripe.com/v3/"></script>
     <script>
       var stripe = Stripe('pk_test_Hei6U9Oumo5FLSzgxqxLclgR00OCdMK8Aw');
-      var buyButton = document.getElementById('buy-button');
+      var buyButton = document.getElementById('purchase-button');
       buyButton.addEventListener('click', function(event) {
         event.preventDefault();
         stripe.redirectToCheckout({
