@@ -50,12 +50,11 @@ $app->get('/cancel', function (Request $request, Response $response, $args) {
 $app->post('/create-session', function(Request $request, Response $response) use ($app)  {
   $params = json_decode($request->getBody());
   try {
-    // One time payments
     $session = \Stripe\Checkout\Session::create([
       'payment_method_types' => ['card', 'ideal'],
       'line_items' => [[
         'name' => 'Hotdog Pin',
-        'description' => 'Interest Hotdog Pins for Sale',
+        'description' => 'Interesting Hotdog Pins for Sale',
         'images' => ['https://www.hotdogpins.com/imgs/previews/thinking_hotdog.png'],
         'amount' => 5,
         'currency' => 'sgd',
