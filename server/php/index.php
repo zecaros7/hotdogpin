@@ -56,7 +56,7 @@ $app->post('/create-session', function(Request $request, Response $response) use
         'name' => 'Hotdog Pin',
         'description' => 'Interesting Hotdog Pins for Sale',
         'images' => ['https://www.hotdogpins.com/imgs/previews/thinking_hotdog.png'],
-        'amount' => 5,
+        'amount' => 12,
         'currency' => 'sgd',
         'quantity' => 1,
       ]],
