@@ -32,7 +32,7 @@ composer install
 composer start
 ```
 
-3. **Run the demo**
+3. **Run the test**
 
 For test cards see [https://stripe.com/docs/testing#cards](https://stripe.com/docs/testing#cards).
 
